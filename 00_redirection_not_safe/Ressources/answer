@@ -1,0 +1,7 @@
+FAILLE : Redirection not safe
+http://192.168.30.129/index.php?page=redirect&site=facebook
+ -- change by
+http://192.168.30.129/index.php?page=redirect&site=admin
+
+GOOD JOB HERE IS THE FLAG : 
+B9E775A0291FED784A2D9680FCFAD7EDD6B8CDF87648DA647AAF4BBA288BCAB3
