@@ -1,0 +1,33 @@
+:: Recursive dump
+<?php
+$array = array();
+
+function getReadMe($ru) {
+
+  global $array;
+
+  $t = file_get_contents($ru);
+  $regex = '/<a href="(.+)">/';
+  preg_match_all($regex, $t, $matches);
+  $urls = $matches[1];
+
+  foreach($urls as $url) {
+    if ($url == "../")
+      continue ;
+    if ($url == "README") {
+      $c = file_get_contents($ru.$url);
+      $c = trim($c);
+      if ( !in_array($c, $array) ) {
+        print_r($ru.$url." => ".$c."\n");
+        $array[$c] = $c;
+      }
+    } else {
+      getReadMe($ru . $url);
+    }
+  }
+}
+getReadMe("http://10.12.1.122/.hidden/");
+?>
+
+:: Run the exec gives ->
+/.hidden/whtccjokayshttvxycsvykxcfm/igeemtxnvexvxezqwntmzjltkt/lmpanswobhwcozdqixbowvbrhw/README => 99dde1d35d1fdd283924d84e6d9f1d820
