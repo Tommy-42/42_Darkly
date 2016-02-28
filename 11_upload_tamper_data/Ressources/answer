@@ -1,0 +1,5 @@
+UPLOAD TAMPER DATA
+You need to tamper the data (Burp Suite) to change the name of the uploaded file
+download foxyproxy ( because of 42 security ) to set proxy
+modify the name by whatever.pdf
+THE FLAG IS : 46910D9CE35B385885A9F7E2B336249D622F29B267A1771FBACF52133BEDDBA8
